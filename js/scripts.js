@@ -16,7 +16,9 @@ const submitValue = (e) => {
     if (checkLenguajeProgramacion.checked) {
       nodoPalabra.dataset.lenguaje = "si";
     }
-    nodoPalabra.dataset.repeticiones = repeticiones.value;
+    if(repeticiones.value !== "0"){
+      nodoPalabra.dataset.repeticiones = repeticiones.value;
+    }
     nodoPalabra.textContent = inputPalabra.value;
     console.log(nodoPalabra);
     listaPalabras.appendChild(nodoPalabra);
