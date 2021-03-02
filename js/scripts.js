@@ -30,14 +30,16 @@ const submitValue = (e) => {
 
 const crearPalabraValidador = () => {
   let res = true;
-  const a = listaPalabras.children;
-  const b = [...a].map(paraula => paraula.innerHTML);
   if (repeticiones.required && repeticiones.value === "") res = false;
   if (inputPalabra.required && inputPalabra.value === "") res = false;
-  if (b.includes(inputPalabra.value)) res = false;
+  if (palabraRepetida(listaPalabras, inputPalabra.value) > 0) res = false;
 
   return res;
 };
+
+const palabraRepetida = (listaPalabras, valorBuscas) =>
+  [...listaPalabras.children].filter(palabraLi => palabraLi.textContent === valorBuscas).length;
+
 
 inputPalabra.addEventListener("input", updateValue);
 submitNuevaPalabra.addEventListener("click", submitValue);
