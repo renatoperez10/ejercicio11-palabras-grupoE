@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
@@ -45,10 +46,10 @@
   <section class="crear-palabras">
     <form class="form-palabras">
       <div class="form-grupo">
-        <input type="text" placeholder="Nueva palabra" required>
+        <input class="input-palabra" type="text" placeholder="Nueva palabra" required>
       </div>
       <div class="form-grupo">
-        <select required>
+        <select class="repeticiones" required>
           <option value="">Máximo de veces</option>
           <option value="0">Sin límite</option>
           <option value="1">1 vez</option>
@@ -57,10 +58,10 @@
         </select>
       </div>
       <div class="form-grupo">
-        <label><input type="checkbox"> Es un lenguaje de programación</label>
+        <label><input class="lenguaje-programacion" type="checkbox"> Es un lenguaje de programación</label>
       </div>
       <div class="form-grupo">
-        <button type="submit" disabled>Crear</button>
+        <button class="submit-palabra" type="submit" disabled>Crear</button>
       </div>
     </form>
   </section>
