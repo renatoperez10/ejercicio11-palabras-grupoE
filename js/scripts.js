@@ -11,6 +11,7 @@ function contadorPalabras() {
 
 // ContadorCaracteres
 function contarCaracteres() {
+  console.log(fraseNueva.textContent);
   const suma = fraseNueva.textContent.length;
   document.querySelector(".contador-caracteres").textContent = suma;
 }
@@ -26,9 +27,13 @@ function longitud() {
 const lista = document.querySelectorAll(".lista-palabras li");
 const lista2 = document.getElementsByClassName("resultado");
 
+// eslint-disable-next-line guard-for-in
 for (const x in lista) {
-  lista[x].addEventListener("click", (e) => {
+  lista[x].addEventListener("click", () => {
     nuevaLista(lista[x].textContent);
+    contadorPalabras();
+    contarCaracteres();
+    longitud();
     lista[x].remove();
   });
 }
